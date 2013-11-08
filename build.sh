@@ -1,7 +1,7 @@
 #!/bin/sh
 BASE_DIR=`pwd`
 TARGET_OS=`uname -s`
-JEMALLOC_PATH="$BASE_DIR/deps/jemalloc-3.4.1"
+JEMALLOC_PATH="$BASE_DIR/deps/jemalloc-3.3.1"
 LEVELDB_PATH="$BASE_DIR/deps/HyperLevelDB"
 SNAPPY_PATH="$BASE_DIR/deps/snappy-1.1.0"
 
@@ -85,11 +85,12 @@ echo "#endif" >> src/version.h
 rm -f build_config.mk
 echo "LEVELDB_PATH=$LEVELDB_PATH" >> build_config.mk
 echo "JEMALLOC_PATH=$JEMALLOC_PATH" >> build_config.mk
+echo "SNAPPY_PATH=$SNAPPY_PATH" >> build_config.mk
 
 echo "CFLAGS=" >> build_config.mk
 echo "CFLAGS = -DNDEBUG -D__STDC_FORMAT_MACROS -Wall -O2 -Wno-sign-compare" >> build_config.mk
 echo "CFLAGS += ${PLATFORM_CFLAGS}" >> build_config.mk
-echo "CFLAGS += -I \"$LEVELDB_PATH/include\"" >> build_config.mk
+echo "CFLAGS += -I \"$LEVELDB_PATH\"" >> build_config.mk
 
 echo "CLIBS=" >> build_config.mk
 echo "CLIBS += ${PLATFORM_CLIBS}" >> build_config.mk

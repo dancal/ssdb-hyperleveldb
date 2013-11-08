@@ -4,12 +4,16 @@ $(shell sh build.sh 1>&2)
 include build_config.mk
 
 all:
-	chmod u+x deps/cpy/cpy
-	chmod u+x tools/ssdb-cli tools/ssdb-benchmark
-	cd "${LEVELDB_PATH}"; autoreconf -i; ./configure; make
 	cd src/util; make
 	cd src; make
 	cd tools; make
+
+init:
+	chmod u+x deps/cpy/cpy
+	chmod u+x tools/ssdb-cli tools/ssdb-benchmark
+	cd "${JEMALLOC_PATH}"; ./configure; make
+	cd "${SNAPPY_PATH}"; ./configure; make
+	cd "${LEVELDB_PATH}"; autoreconf -i; ./configure; make
 
 install:
 	mkdir -p ${PREFIX}

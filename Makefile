@@ -4,10 +4,9 @@ $(shell sh build.sh 1>&2)
 include build_config.mk
 
 all:
-	#chmod u+x "${LEVELDB_PATH}/build_detect_platform"
 	chmod u+x deps/cpy/cpy
 	chmod u+x tools/ssdb-cli tools/ssdb-benchmark
-	#cd "${LEVELDB_PATH}"; make
+	cd "${LEVELDB_PATH}"; autoreconf -i; ./configure; make
 	cd src/util; make
 	cd src; make
 	cd tools; make

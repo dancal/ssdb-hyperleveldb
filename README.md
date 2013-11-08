@@ -1,3 +1,8 @@
+# How to Install
+make init
+make
+
+
 # SSDB - A LevelDB server with zset data type
 
 SSDB is a high performace key-value(key-string, key-zset, key-hashmap) NoSQL database, using Google LevelDB as storage engine. 

@@ -1,5 +1,9 @@
 # How to Install
 
+* cd deps
+* git clone https://github.com/rescrv/HyperLevelDB
+* cd ../
+* ./build.sh
 * make init
 * make
 

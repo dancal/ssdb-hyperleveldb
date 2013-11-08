@@ -1,7 +1,7 @@
 #!/bin/sh
 BASE_DIR=`pwd`
 TARGET_OS=`uname -s`
-JEMALLOC_PATH="$BASE_DIR/deps/jemalloc-3.3.1"
+JEMALLOC_PATH="$BASE_DIR/deps/jemalloc-3.4.1"
 LEVELDB_PATH="$BASE_DIR/deps/HyperLevelDB"
 SNAPPY_PATH="$BASE_DIR/deps/snappy-1.1.0"
 

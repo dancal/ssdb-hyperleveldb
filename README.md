@@ -1,6 +1,7 @@
 # How to Install
-make init
-make
+
+* make init
+* make
 
 
 # SSDB - A LevelDB server with zset data type
